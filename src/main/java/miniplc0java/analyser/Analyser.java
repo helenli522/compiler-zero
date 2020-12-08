@@ -59,7 +59,7 @@
 //     */
 //    private Token next() throws TokenizeError {
 //        if (peekedToken != null) {
-//            var token = peekedToken;
+//            Token token = peekedToken;
 //            peekedToken = null;
 //            return token;
 //        } else {
@@ -75,7 +75,7 @@
 //     * @throws TokenizeError
 //     */
 //    private boolean check(TokenType tt) throws TokenizeError {
-//        var token = peek();
+//        Token token = peek();
 //        return token.getTokenType() == tt;
 //    }
 //
@@ -87,7 +87,7 @@
 //     * @throws TokenizeError
 //     */
 //    private Token nextIf(TokenType tt) throws TokenizeError {
-//        var token = peek();
+//        Token token = peek();
 //        if (token.getTokenType() == tt) {
 //            return next();
 //        } else {
@@ -103,7 +103,7 @@
 //     * @throws CompileError 如果类型不匹配
 //     */
 //    private Token expect(TokenType tt) throws CompileError {
-//        var token = peek();
+//        Token token = peek();
 //        if (token.getTokenType() == tt) {
 //            return next();
 //        } else {
@@ -145,7 +145,7 @@
 //     * @throws AnalyzeError 如果未定义则抛异常
 //     */
 //    private void initializeSymbol(String name, Pos curPos) throws AnalyzeError {
-//        var entry = this.symbolTable.get(name);
+//        SymbolEntry entry = this.symbolTable.get(name);
 //        if (entry == null) {
 //            throw new AnalyzeError(ErrorCode.NotDeclared, curPos);
 //        } else {
@@ -162,7 +162,7 @@
 //     * @throws AnalyzeError
 //     */
 //    private int getOffset(String name, Pos curPos) throws AnalyzeError {
-//        var entry = this.symbolTable.get(name);
+//        SymbolEntry entry = this.symbolTable.get(name);
 //        if (entry == null) {
 //            throw new AnalyzeError(ErrorCode.NotDeclared, curPos);
 //        } else {
@@ -179,7 +179,7 @@
 //     * @throws AnalyzeError
 //     */
 //    private boolean isConstant(String name, Pos curPos) throws AnalyzeError {
-//        var entry = this.symbolTable.get(name);
+//        SymbolEntry entry = this.symbolTable.get(name);
 //        if (entry == null) {
 //            throw new AnalyzeError(ErrorCode.NotDeclared, curPos);
 //        } else {
